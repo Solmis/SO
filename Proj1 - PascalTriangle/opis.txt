@@ -1,0 +1,32 @@
+*** OPIS PROTOKOŁU ***
+-----------------------
+
+
+* Pascal -> W(1) *
+------------------
+> wysyła liczbę k typu long int, gdzie k > 0
+  - zleca procesowi W(1) zainicjowania kolejnego kroku obliczeń
+> wysyła liczbę 0 typu long int
+  - zleca procesowi W(1) i kolejnym zakończenie pracy
+
+
+* W(1) -> Pascal *
+------------------
+> wysyła liczbę k typu long int, gdzie k > 0
+  - przesyła kolejne wartości n-tego wiersza trójkąta Pascala
+
+
+* W(i) -> W(i+1) *
+------------------
+> wysyła liczbę k typu long int, gdzie k > 0
+  - przekazuje dalej polecenie wykonania kolejnego kroku obliczeń
+> wysyła liczbę k typu long int, gdzie k < 0
+  - przekazuje swoją wartość (zanegowaną) do następnego procesu
+> wysyła liczbę 0 typu long int
+  - przekazuje dalej polecenie zakończenia pracy
+
+
+* W(i) <- W(i+1) *
+------------------
+> wysyła liczbę k typu long int, gdzie k > 0
+  - przekazuje kolejną wartość n-tego wiersza trójkąta Pascala
